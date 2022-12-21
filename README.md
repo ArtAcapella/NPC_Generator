@@ -7,7 +7,8 @@ Documentation:
 Main Logic:
 ![image](https://user-images.githubusercontent.com/111773778/208933409-5fc7c2e1-9331-432b-a24b-a9b90f27d8b4.png)
 
-THINGS TO ADD\n
+THINGS TO ADD
+
   	Beast Option
   	Storing System
 	Homeland
@@ -21,5 +22,6 @@ THINGS TO ADD\n
 	Combat behavior based on HP and personality (do they go for tanks or casters? what tactics do they try to pull off?)
 	Social behavior based on personality (what is their goal out of a social interaction? what tactics do they go for)
 	
-Assingments\n
+Assingments
+
 	Me: Everything
