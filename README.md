@@ -5,4 +5,4 @@ Documentation:
 
 
 Main Logic:
-![image](https://app.diagrams.net/#G1ed_U6rPWtFov-EPiKyjUllEOuU-ACwlx)
+![image]
