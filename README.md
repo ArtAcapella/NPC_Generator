@@ -5,4 +5,5 @@ Documentation:
 
 
 Main Logic:
-![image]
+![image](https://user-images.githubusercontent.com/111773778/208933409-5fc7c2e1-9331-432b-a24b-a9b90f27d8b4.png)
+
