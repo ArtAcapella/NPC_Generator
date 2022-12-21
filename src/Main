@@ -1,0 +1,338 @@
+package npcGen;
+import java.util.*;
+import java.util.Random;
+
+public class main {
+	/*THINGS TO ADD
+	Homeland
+	Combat style according to stats and personality
+	Subclass Abilities
+	Threshold for resisting charisma checks
+	HP level at which they will try to surrender, if at all. 
+	Actions depending on current HP level
+	Spell-List Generator
+	Spell List Display
+	MAKE THIS ALL IN A FRAME?
+	Combat behavior based on HP and personality (do they go for tanks or casters? what tactics do they try to pull off?)
+	Social behavior based on personality (what is their goal out of a social interaction? what tactics do they go for)
+	  */
+	
+	  public static void main(String[] args) {
+	   //input level
+	    Scanner sc= new Scanner(System.in);
+	    System.out.println("What is the level of the character?");
+	    int lvl = sc.nextInt();
+
+	    Random rand = new Random();
+	    String[] nameA = {"Litmir", "Alms", "Lay", "Mattis", "Maria", "Mrish", "Sam", "Mart", "Lia", "Obri", "Riaan", "Mirki", "Ash", "Lei", "Tilith", "Unnal", "(wont say their first name)", "Doe", "Artyom", "Maris", "Boros", "Corin", "Feiham", "Lucy", "Iris", "Bertham", "Sir", "Madame", "Alexi", "Ruby", "Ikathon", "Trent", "Clef", "Halu", "Osta"};
+	      String[] nameB = {"Lin", "Arcade", "Lakson", "Arkirl", "Vakin", "Ghrushkar", "Yikovi", "Drushar", "Arvien", "Boviar", "Borier", "Lartyom", "Corakin", "Fharis", "Issen", "(Wont tell you their last name)", "Bell", "Nav", "Cathmoi"};
+	    System.out.println(nameA[rand.nextInt(nameA.length)] + " " + nameB[rand.nextInt(nameB.length)]);
+
+	    String[] alignment = {"Lawful", "Neutral", "Chaotic"};
+	    System.out.println("Alignment: " + alignment[rand.nextInt(alignment.length)]);
+
+	    String[] bonds = {"I would die to recover an ancient artifact of my faith that was lost long ago.", "I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.", "I owe me life to the priest who took me in when my parents died.", "Everything I do is for the common people.", "I will do anything to protect the temple where I served.", "I seek to preserve a sacred text that my enemies consider heretical and seek to destroy.", "I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about.", "I owe everything to my mentor--a horrible person whos probably rotting in jail somewhere.", "Somewhere out there I have a child who doesnt know me. Im making the world better for them.", "I come from a noble family, and one day Ill reclaim my lands and title from those who stole them from me.", "A powerful person killed someone I love. Some day soon, Ill have my revenge.", "I swindled and ruined a person who didnt deserve it. I seek to atone for my misdeeds but might never be able to forgive myself.", "Im trying to pay off an old debt I owe to a generous benefactor.", "Im guilty of a terrible crime. I hope I can redeem myself for it.", "Someone I loved died because of a mistake I made. That will never happen again.", "My instrument is my most treasured possession, and it reminds me of someone I love.", "I idolize a hero of the old tales and measure my deeds against that persons", "I will do anything to prove myself superior to me hated rival.", "I have a family, but I have no idea where they are. One day, I hope to see them again.", "I worked the land, I love the land, and I will protect the land.", "My tools are symbols of my past life, and I carry them so that I will never forget my roots", "I protect those who cannot protect themselves.", "I wish my childhood sweetheart had come with me to pursue my destiny.", "The workshop where I learned my trade is the most important place in the world to me.", "I created a great work for someone, and then found them unworthy to receive it. Im still looking for someone worthy.", "I pursue wealth to secure someones love.", "I will get revenge on the evil forces that destroyed my place of business and ruined my livelihood.", "Nothing is more important than the other members of my hermitage, order, or association.", "I entered seclusion to hide from the ones who might still be hunting me. I must someday confront them.", "Should my discovery come to light, it could bring ruin to the world.", "My isolation gave me great insight into a great evil that only I can destroy.", "I will face any challenge to win the approval of my family.", "My houses alliance with another noble family must be sustained at all costs.", "My loyalty to my sovereign is unwavering.", "The common folk must see me as a hero of the people.", "My family, clan, or tribe is the most important thing in my life, even when they are far from me.", "I will bring terrible wrath down on the evildoers who destroyed my homeland.", "I am the last of my tribe, and it is up to me to ensure their names enter legend.", "I suffer awful visions of a coming disaster and will do anything to prevent it.", "It is my duty to provide children to sustain my tribe.", "It is my duty to protect my students.", "I have an ancient text that holds terrible secrets that must not fall into the wrong hands.", "I work to preserve a library, university, scriptorium, or monastery.", "My lifes work is a series of tomes related to a specific field of lore.", "Ive been searching my whole life for the answer to a certain question.", "I sold my soul for knowledge. I hope to do great deeds and win it back.", "Im loyal to my captain first, everything else second.", "Ill always remember my first ship.", "I would lay down my life for the people I served with.", "Someone saved my life on the battlefield. To this day, I will never leave a friend behind.", "My honor is my life.", "Ill never forget the crushing defeat my company suffered or the enemies who dealt it.", "Those who fight beside me are those worth dying for.", "I fight for those who cannot fight for themselves.", "I sponsor an orphanage to keep others from enduring what I was forced to endure.", "I escaped my life of poverty by robbing an important person, and Im wanted for it."};
+	    System.out.println("Bonds: " + bonds[rand.nextInt(bonds.length)]);
+
+	    String[] flaws = {"I judge others harshly and myself even more severely.", "I put too much trust in those who wield power within my temples hierarchy.", "My piety sometimes leads me to blindly trust those that profess faith in my god.", "I am inflexible in my thinking.", "I am suspicious of strangers and suspect the worst of them.", "Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.", "I cant resist a pretty face.", "Im always in debt. I spend my ill-gotten gains on decadent luxuries faster than I bring them in.", "Im convinced that no one could ever fool me in the way I fool others.", "Im too greedy for my own good. I cant resist taking a risk if theres money involved.", "I cant resist swindling people who are more powerful than me.", "I hate to admit it and will hate myself for it, but Ill run and preserve my own hide if the going gets tough.", "When I see something valuable, I cant think about anything but how to steal it.", "When faced with a choice between money and my friends, I usually choose the money.", "If theres a plan, Ill forget it. If I dont forget it, Ill ignore it.", "I have a tell that reveals when Im lying.", "I turn tail and run when things go bad.", "An innocent person is in prison for a crime that I committed. Im okay with that.", "Ill do anything to win fame and renown.", "Im a sucker for a pretty face.", "A scandal prevents me from ever going home again. That kind of trouble seems to follow me around.", "I once satirized a noble who still wants my head. It was a mistake that I will likely repeat.", "I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble.", "Despite my best efforts, I am unreliable to my friends.", "The tyrant who rules my land will stop at nothing to see me killed.", "Im convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.", "The people who knew me when I was young know my shameful secret, so I can nevergo home again.", "I have a weakness for the vices of the city, especially hard drink.", "Secretly, I believe that things would be better if I were a tyrant lording over the land.", "I have trouble trusting in my allies. ", "Ill do anything to get my hands on something rare or priceless.", "Im quick to assume that someone is trying to cheat me.", "No one must ever learn that I once stole money from guild coffers.", "Im never satisfied with what I have--I always want more.", "I would kill to acquire a noble title.", "Im horribly jealous of anyone who outshines my handiwork. Everywhere I go, Im surrounded by rivals.", "Now that Ive returned to the world, I enjoy its delights a little too much.", "I harbor dark bloodthirsty thoughts that my isolation failed to quell.", "I am dogmatic in my thoughts and philosophy.", "I let my need to win arguments overshadow friendships and harmony.", "Id risk too much to uncover a lost bit of knowledge.", "I like keeping secrets and wont share them with anyone.", "I secretly believe that everyone is beneath me.", "I hide a truly scandalous secret that could ruin my family forever.", "I too often hear veiled insults and threats in every word addressed to me, and Im quickto anger.", "I have an insatiable desire for carnal pleasures.", "In fact, the world does revolve around me.", "By my words and actions, I often bring shame to my family.", "I am too enamored of ale, wine, and other intoxicants.", "Theres no room for caution in a life lived to the fullest.", "I remember every insult Ive received and nurse a silent resentment toward anyone whos ever wronged me.", "I am slow to trust members of other races", "Violence is my answer to almost any challenge.", "Dont expect me to save those who cant save themselves. It is natures way that the strong thrive and the weak perish.", "I am easily distracted by the promise of information.", "Most people scream and run when they see a demon. I stop and take notes on its anatomy.", "Unlocking an ancient mystery is worth the price of a civilization.", "I overlook obvious solutions in favor of complicated ones.", "I speak without really thinking through my words, invariably insulting others.", "I cant keep a secret to save my life, or anyone elses.", "I follow orders, even if I think theyre wrong.", "Ill say anything to avoid having to do extra work.", "Once someone questions my courage, I never back down no matter how dangerous the situation.", "Once I start drinking, its hard for me to stop.", "I cant help but pocket loose coins and other trinkets I come across.", "My pride will probably lead to my destruction", "The monstrous enemy we faced in battle still leaves me quivering with fear.", "I have little respect for anyone who is not a proven warrior.", "I made a terrible mistake in battle that cost many lives--and I would do anything to keep that mistake secret.", "My hatred of my enemies is blind and unreasoning.", "I obey the law, even if the law causes misery.", "If Im outnumbered, I always run away from a fight.", "Gold seems like a lot of money to me, and Ill do just about anything for more of it.", "I will never fully trust anyone other than myself.", "Id rather kill someone in their sleep than fight fair.", "Its not stealing if I need it more than someone else.", "People who dont take care of themselves get what they deserve."};
+	    System.out.println("Flaws: " + flaws[rand.nextInt(flaws.length)]);
+
+	    String[] ideals = {"Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.(Lawful)", "Charity. I always try to help those in need, no matter what the personal cost. (Good)", "Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)", "Power. I hope to one day rise to the top of my faiths religious hierarchy. (Lawful)", "Aspiration. I seek to prove my self worthy of my gods favor by matching my actions against his or her teachings. (Any)", "Independence. I am a free spirit--no one tells me what to do. (Chaotic)", "Fairness. I never target people who cant afford to lose a few coins. (Lawful)", "Charity. I distribute money I acquire to the people who really need it. (Good)", "Creativity. I never run the same con twice. (Chaotic)", "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)", "Aspiration. Im determined to make something of myself. (Any)", "Honor. I dont steal from others in the trade. (Lawful)", "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)", "Charity. I steal from the wealthy so that I can help people in need. (Good)", "Greed. I will do whatever it takes to become wealthy. (Evil)", "People. Im loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)", "Redemption. Theres a spark of good in everyone. (Good)", "Beauty. When I perform, I make the world better than it was. (Good)", "Tradition. The stories, legends, and songs of the past must never be forgotten. (Lawful)", "Creativity. The world is in need of new ideas and bold action. (Chaotic)", "Greed. Im only in it for the money and fame. (Evil)", "People. I like seeing the smiles on peoples faces when I perform. Thats all that matters.(Neutral)", "Honesty. Art should reflect the soul; it should come from within and reveal who we really are. (Any)", "Respect. People deserve to be treated with dignity and respect. (Good)", "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)", "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)", "Might. If I become strong, I can take what I want--what I deserve. (Evil)", "Sincerity. Theres no good pretending to be something Im not. (Neutral)", "Destiny. Nothing and no one can steer me away from my higher calling. (Any) ", "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)", "Generosity. My talents were given to me so that I could use them to benefit the world.(Good)", "Freedom. Everyone should be free to pursue his or her livelihood. (Chaotic)", "Greed. Im only in it for the money. (Evil)", "People. Im committed to the people I care about, not to ideals. (Neutral)", "Aspiration. I work hard to be the best there is at my craft. (Any)", "Greater Good. My gifts are meant to be shared with all, not used for my own benefit.(Good)", "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking.(Lawful)", "Free Thinking. Inquiry and curiosity are the pillars of progress. (Chaotic)", "Power. Solitude and contemplation are paths toward mystical or magical power. (Evil)", "Live and Let Live. Meddling in the affairs of others only causes trouble. (Neutral)"};
+	    System.out.println("Ideals: " + ideals[rand.nextInt(ideals.length)]);
+	    
+	    
+	      String[] backgroundA = {"Former", "Former", "Former", "Kind", "Pleasant", "Disheartened", "Emotional", "Mute", "Blind", "Singing", "Muttering", "Mourning", "Cheerful", "Lost", "Drunk", "Gentle", "Loud", "Feisty", "Crude", "Violent", "Undead", "Hiding"};
+	      String[] backgroundB = {"Merchant", "Charlatan", "Feylost", "Entertainer", "Acolyte", "Priest", "Sailor", "Knight", "Noble", "Pirate", "Soldier", "Spy", "Assassin", "Mercenary", "Fisher", "Poet", "Alchemical Gardener", "Farmer", "Alchemist", "Outlander", "Wanderer", "Scholar", "Philosopher", "Bounty Hunter", "Archeologist", "Athlete", "Adventurer", "Pact-Owned (Like a Warlock but more subservient)"};
+	System.out.println(backgroundA[rand.nextInt(backgroundA.length)] + " " + backgroundB[rand.nextInt(backgroundB.length)]);
+	      String[] appearanceList = {"Cloak", "Dulcimer", "Flute", "Dreary Eyes", "Spotty Makeup", "faded eyeliner", "strong legs", "Missing two Teeth", "spring in their step", "Briliant Ruby Necklace", "Stunning Silver Earings", "Large Bag of Food", "Large, heavily magnifying glasses", "Teardrop Piercings", "Dirty Clothes", "Noble Clothing", "Old Coat", "Small Copper Circlet", "One Random Uncommon Magic Item", "Two Random Uncommon Magic Items", "One Random Rare Magic Item", "Dreamy Eyes", "Buff as Hell", "Amulet of their God", "Painters Kit", "Sketchbook", "Tinkering Tools", "Soft appearance", "woolen sweater", "cute", "shredded clothes", "scar on the lower cheek", "scar along the entire thigh", "scars on the back of the hand"};
+	      List<String> appearace = new ArrayList<>();
+	    int i = 0;
+	    for (i = 0; i < (rand.nextInt(3) + 3); i++) {
+	    appearace.add(appearanceList[rand.nextInt(appearanceList.length)]);
+	    }
+	    
+	    //Select Race
+	      String[] race = {"Elf", "Orc", "Human", "Halfling", "Gnome", "Tiefling", "Goliath", "Dragonborn", "Firbolg", "Dwarf", "Half-Dwarf", "Half-Elf", "Genasi", "Uncommon"};
+	      String raceA = race[rand.nextInt(race.length)];
+	        System.out.println("Race: " + race[rand.nextInt(race.length)]);
+	    //generate stats
+	    int Str = 3 + rand.nextInt(8) + rand.nextInt(7) + rand.nextInt(8);
+	    int Dex = 3 + rand.nextInt(8) + rand.nextInt(7) + rand.nextInt(7);
+	    int Con = 5 + rand.nextInt(6) + rand.nextInt(5) + rand.nextInt(4);
+	    int Int = 3 + rand.nextInt(8) + rand.nextInt(7) + rand.nextInt(7);
+	    int Wis = 3 + rand.nextInt(8) + rand.nextInt(7) + rand.nextInt(8);
+	    int Cha = 3 + rand.nextInt(8) + rand.nextInt(7) + rand.nextInt(7);
+	    //instantiate save proficiencies
+	    boolean strPro = false;
+	    boolean dexPro = false;  
+	    boolean conPro = false;
+	    boolean intPro = false;
+	    boolean wisPro = false;
+	    boolean chaPro = false;
+	    //instatiate death save states
+	    int dSaved = 0;
+	    int dFailed = 0;
+	      
+	    int hitDie = 10;
+
+	    int actions = 1;
+
+	      List<String> spellList = new ArrayList<>();
+	    
+	      //select Class
+	      int classRand = rand.nextInt(100);
+	      if (classRand >= 1 && classRand <= 3) {
+	        String cls = "Unclassed"; 
+	        System.out.println(cls);
+	         strPro = true;
+	         dexPro = true;
+	         conPro = true;
+	         intPro = true;
+	         wisPro = true;
+	      } else if (classRand >= 1 && classRand <= 9 && (Dex >= 12||Str >= 12)) {
+	        String cls = " Blood Hunter";
+	        hitDie = 10;
+	        Str = Str + 2 + (lvl/4);
+	        String[] subclass = {"Ghost Slayer", "Lycan", "Vampire", "Profane Soul", "Mutagen"};
+	         strPro = true;
+	         dexPro = true;
+	         wisPro = true;
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	        actions = actions +1;
+	      } else if (classRand >= 1 && classRand <= 40 && (Dex >= 12||Str >= 12)) {
+	        String cls = " Fighter";
+	        hitDie = 10;
+	        Str = Str + 2 + (lvl/4);
+	         strPro = true;
+	         dexPro = true;
+	        String[] subclass = {"Champion ", "Eldrich Knight ", "Samurai "};
+	        appearace.add("Grand Weapon");
+	        appearace.add("Worn-out Armor");
+	        appearace.add("Some sort of moster blood on boots");
+	        appearace.add("Walks in a marching pace");
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	        actions = actions +1;
+	      } else if (classRand >= 26 && classRand <= 35 && (Dex >= 12||Str >= 12)) {
+	        String cls = " Ranger";
+	        hitDie = 8;
+	        Dex = Dex + 2 + (lvl/4);
+	        spellList.add("Hunters Mark");
+	        spellList.add("Goodberry");
+	        spellList.add("Flame Arrows");
+	         dexPro = true;
+	         wisPro = true;
+	        String[] subclass = {"Hunter", "Swarmkeeper", "Beastmaster"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 26 && classRand <= 45 && Dex >= 12) {
+	        String cls = " Rogue";
+	        hitDie = 8;
+	        Dex = Dex + 2 + (lvl/4);
+	        spellList.add("Mage Hand");
+	         dexPro = true;
+	         wisPro = true;
+	        String[] subclass = {"Theif", "Assassin", "Swashbuckler", "Arcane Trickster"};
+	        actions = actions +1;
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 46 && classRand <= 50 && (Dex >= 12||Str >= 12)) {
+	        String cls = " Barbarian";
+	        hitDie = 12;
+	        Str = Str + 2 + (lvl/4);
+	        strPro = true;
+	        dexPro = true;
+	        conPro = true;
+	        String[] subclass = {"Wild Soul", "Zealot"};
+	        actions = actions + 1;
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 51 && classRand <= 55 && Str >= 12) {
+	        String cls = " Paladin";
+	        hitDie = 10;
+	        Str = Str + 2 + (lvl/4);
+	        strPro = true;
+	        wisPro = true;
+	        chaPro = true;
+	        String[] subclass = {"Oath of Redemption", "Oath of Loyalty", "Oath of Vengance"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	        spellList.add("Protection from Good and Evil");
+	        spellList.add("Smite!!!!");
+	      } else if (classRand >= 40 && classRand <= 65 && Dex >= 12) {
+	        String cls = " Monk";
+	        hitDie = 8;
+	        Dex = Dex + 2 + (lvl/4);
+	        dexPro = true;
+	        wisPro = true;
+	        String[] subclass = {"Shadow", "Way of the Open Hand", "Sun Soul"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 66 && classRand <= 74 && Cha >= 14) {
+	        String cls = " Warlock";
+	        hitDie = 8;
+	        Cha = Cha + 2 + (lvl/4);
+	        wisPro = true;
+	        chaPro = true;
+	        spellList.add("Eldrich Blast");
+	        spellList.add("Hex");
+	        spellList.add("Hellish Rebuke");
+	        String[] subclass = {"Fiend", "Hexblade", "Celestial", "Archfey"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 65 && classRand <= 79 && Int >= 12) {
+	        String cls = " Wizard";
+	        hitDie = 10;
+	        spellList.add("Shield");
+	        intPro = true;
+	        wisPro = true;
+	        String[] subclass = {"Evocation", "Transmutation", "Abjuration", "Illusion", "Graviturgy", "Conjuration"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 70 && classRand <= 85 && Cha >= 12) {
+	        String cls = " Sorcerer";
+	        hitDie = 6;
+	        Cha = Cha + 2 + (lvl/4);
+	        wisPro = true;
+	        chaPro = true;
+	        spellList.add("Witch Bolt");
+	        spellList.add("Burning Hands");
+	        spellList.add("Mirror Image");
+	        String[] subclass = {"Shadow", "Wild Magic", "Storm", "Divine Soul"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 75 && classRand <= 88 && Wis >= 12) {
+	        String cls = " Cleric";
+	        hitDie = 8;
+	        Wis = Wis + 2 + (lvl/4);
+	        wisPro = true;
+	        dexPro = true;
+	        spellList.add("Healing Word");
+	        spellList.add("Shield of Faith");
+	        spellList.add("Guiding Bolt");
+	        spellList.add("Inflict Wounds");
+	        String[] subclass = {"War", "Life", "Death", "Life", "Forge"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 89 && classRand <= 94 && Wis >= 12) {
+	        String cls = " Druid";
+	        hitDie = 8;
+	        Wis = Wis + 2 + (lvl/4);
+	        wisPro = true;
+	        chaPro = true;
+	        spellList.add("Heat Metal");
+	        spellList.add("Cure Wounds");
+	        spellList.add("Entangle");
+	        spellList.add("Scorching Ray");
+	        String[] subclass = {"Wildfire", "Moon", "Shepherd", "Land"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 95 && classRand <= 99 && Cha >= 12) {
+	        String cls = " Bard";
+	        hitDie = 8;
+	        Cha = Cha + 2 + (lvl/4);
+	        chaPro = true;
+	        intPro = true;
+	        spellList.add("Viscious Mockery");
+	        spellList.add("Burning Hands");
+	        spellList.add("Healing Word");
+	        String[] subclass = {"Valor", "Lore", "Glamour"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else if (classRand >= 99) {
+	        String cls = " Mystic";
+	        hitDie = 8;
+	        Int = Int + 4 + (lvl/3);
+	        intPro = true;
+	        wisPro = true;
+	        strPro = true;
+	        String[] subclass = {"Avatar", "Nomad", "Wu Jen", "Immortal"};
+	        System.out.println(subclass[rand.nextInt(subclass.length)] + cls);
+	      } else {
+	        String cls = "Unclassed"; 
+	        Dex = Dex + 1 + (lvl/4);
+	        Str = Str + 1 + (lvl/4);
+	        Con = Con + 1 + (lvl/4);
+	        Int = Int + 1 + (lvl/4);
+	        strPro = true;
+	        wisPro = true;
+	        dexPro = true;
+	        conPro = true;
+	        System.out.println(cls);
+	      }
+
+	      System.out.println("Appearance Traits: " + appearace);
+	      
+	      int strMod = (Str - 10)/2;
+	      int dexMod = (Dex - 10)/2;
+	      int conMod = (Con - 10)/2;  
+	      int intMod = (Int - 10)/2;
+	      int wisMod = (Wis - 10)/2;
+	      int chaMod = (Cha - 10)/2;
+	      
+	      System.out.println("Strength: " + Str + ", Mod: " + strMod);
+	      System.out.println("Dexterity: " + Dex + ", Mod: " + dexMod);
+	      System.out.println("Constitution: " + Con + ", Mod: " + conMod);
+	      System.out.println("Inteligence: " + Int + ", Mod: " + intMod);
+	      System.out.println("Wisdom: " + Wis + ", Mod: " + wisMod);
+	      System.out.println("Charisma: " + Cha + ", Mod: " + chaMod);
+	      
+	      int unArmoredAC = (8 + dexMod);
+	      int trueAC = unArmoredAC;
+	      int profBon = (lvl/3);
+	      int magicBonAC = 0;
+	      boolean lightArmor = false;
+	      boolean heavyArmor = false;
+
+	      //Spells
+	      System.out.println("Spells: " + spellList);
+	    
+	      //Actions
+	      System.out.println("Actions: " + (actions+lvl/8));
+	    
+	      //Equipment
+	      System.out.println("Inventory:");
+	      if (Str >= 14) {
+	       System.out.println("Handaxe, +" + (strMod+profBon+2) + " to hit, 1d6 + " + (strMod));
+	       System.out.println("Plate Armor");
+	       heavyArmor = true;
+	        if (lvl >= 5) {
+	          System.out.println("Greatsword+1, +" + (strMod+profBon+3) + " to hit, 1d6 + " + (strMod + 1));
+	        }
+	      } if (Dex >= 14) {
+	        System.out.println("Returning Dagger");
+	        System.out.println("leather armor");
+	        lightArmor = true;
+	        if (lvl >= 5) {
+	          System.out.println("Rapier+1, +" + (dexMod+profBon+3) + " to hit, 1d8 + " + (dexMod + 1));
+	        }
+	      } if (Con >= 16) {
+	        System.out.println("Health Potion x2, 2d4 HP");
+	        System.out.println("Plate Armor");
+	        heavyArmor = true;
+	        if (lvl >= 5) {
+	          System.out.println("Greater Health Potion x2, 6d4 HP");
+	        }
+	      } if (Int >= 14) {
+	        System.out.println("Wand of Magic Missiles");
+	        if (lvl >= 5) {
+	          System.out.println("Wand of Lightning Bolts");
+	          magicBonAC = magicBonAC + 1;
+	        }
+	      } if (Wis >= 14) {
+	        System.out.println("leather armor");
+	        lightArmor = true;
+	        if (lvl >= 5) {
+	          System.out.println("Eversmoking Bottle");
+	          magicBonAC = magicBonAC + 2;
+	        }
+	      } if (Cha >= 14) {
+	        System.out.println("Flute, Lute, Erhu");
+	        if (lvl >= 5) {
+	          System.out.println("Eyes of Charming");
+	        }
+	      }
+	    
+	    if (heavyArmor == true) {
+	      trueAC = 15 + dexMod + magicBonAC;
+	    } else if (lightArmor == true) {
+	      trueAC = 12 + dexMod + magicBonAC;
+	    } 
+	    
+	    int HPmax = ((hitDie/2)*(lvl-1) + hitDie + (conMod*lvl));
+	    int HPnow = HPmax;
+	    System.out.println("Max HP: " + HPmax);
+	    System.out.println("Current HP" + HPnow);
+	    System.out.println("AC: " + trueAC);
+	    
+	   
+	        }
+	      }
