@@ -8,6 +8,8 @@ Main Logic:
 ![image](https://user-images.githubusercontent.com/111773778/208933409-5fc7c2e1-9331-432b-a24b-a9b90f27d8b4.png)
 
 Classes:
+![image](https://user-images.githubusercontent.com/111773778/210588573-4a31bf31-252a-4e86-a25c-6ac0ebb68383.png)
+
 
 
 ## THINGS TO ADD
