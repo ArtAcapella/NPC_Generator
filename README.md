@@ -7,6 +7,9 @@ Documentation:
 Main Logic:
 ![image](https://user-images.githubusercontent.com/111773778/208933409-5fc7c2e1-9331-432b-a24b-a9b90f27d8b4.png)
 
+Classes:
+
+
 ## THINGS TO ADD
   	Beast Option
   	Storing System
